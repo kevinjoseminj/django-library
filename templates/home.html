@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<section>
+    <div>
+        <table class="table mt-5" id="productsTable">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Reviews
+                    <th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in lib %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.Name}}</td>
+                    <td>{{i.Address}}</td>
+                    <td>{{i.City}}</td>
+                    <td>{{i.Review}}</td>
+                    <td>
+                        <a href="write_review/{{i.id}}" class="btn btn-primary">Write Review</a>
+                        <a href="view_reviews/{{i.id}}" class="btn btn-success">View Reviews</a>
+                    </td>
+                </tr>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</section>
+
+{% endblock %}

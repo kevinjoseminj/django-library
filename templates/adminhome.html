@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row mt-4">
+            <a href="{% url 'addlibraries' %}" class="btn btn-success ml-auto">Add Library</a>
+        </div>
+        <table class="table mt-5" id="productsTable">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Review</th>
+                </tr>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in library %}
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{i.id}}</td>
+                    <td>{{i.Name}}</td>
+                    <td>{{i.Address}}</td>
+                    <td>{{i.City}}</td>
+                    <td>{{i.Review}}</td>
+                    <td>
+                        <a href="editlib/{{i.id}}" class="btn btn-primary">Edit</a>
+                        <a href="delete/{{i.id}}" class="btn btn-danger">Delete</a>
+                        <a href="view_reviews/{{i.id}}" class="btn btn-danger">View Reviews</a>
+                    </td>
+                </tr>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+{% endblock %}
