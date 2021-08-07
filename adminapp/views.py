@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from . models import Administrator,Library
+from . models import Administrator,Library,Reviews
 
 
 # Create your views here.
@@ -78,3 +78,16 @@ def delete(request,id):
     library = Library.objects.all()
     return render(request,'adminhome.html',{'library':library})
     
+
+def all_views(request):
+    val = Reviews.objects.all()
+    return render(request,'allreview.html',{'val':val})
+
+def delete_review(request,id):
+    
+    re = Reviews.objects.get(id=id)
+    re.delete()
+    val = Reviews.objects.all()
+    return render(request,'allreview.html',{'val':val})
+
+

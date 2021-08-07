@@ -7,7 +7,7 @@ from adminapp. models import Library,Reviews
 
 def view_reviews(request,id):
     
-    re = Reviews.objects.get(id=id)
+    re = Reviews.objects.all()
     return render(request,'reviewlist.html',{'re':re})
 
 

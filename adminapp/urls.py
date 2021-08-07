@@ -11,10 +11,9 @@ urlpatterns = [
     path('editlib/<int:id>',views.editlib,name='editlib'),
     path('delete/<int:id>',views.delete,name='delete'),
     path('update/<int:id>',views.update,name='update'),
+    path('all_views',views.all_views,name='all_views'),
+    path('delete_review/<int:id>',views.delete_review,name='delete_review'),
 
-    
-
-    
 
     
 ]
